@@ -9,10 +9,13 @@ ThemeData _baseTheme = ThemeData.dark();
 ThemeData theme = _baseTheme.copyWith(
   colorScheme: ColorScheme.fromSeed(
     seedColor: JournalColors.primary,
+    primary: JournalColors.primary,
+    secondary: JournalColors.secondary,
   ),
   useMaterial3: true,
   textTheme: textTheme(_baseTheme),
   primaryColor: JournalColors.primary.withOpacity(0.5),
+
   scaffoldBackgroundColor: JournalColors.background,
   // colorScheme: _baseTheme.colorScheme.copyWith(
   //   primary: CrisinaColors.accentSwatch,

@@ -32,7 +32,7 @@ TextTheme textTheme(ThemeData basis) {
     ),
     //as title
     headlineMedium: baseFont.copyWith(
-      fontSize: 22,
+      fontSize: 18,
       fontWeight: FontWeight.bold,
     ),
     headlineSmall: baseFont.copyWith(

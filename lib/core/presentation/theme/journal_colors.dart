@@ -8,6 +8,7 @@ abstract class JournalColors {
   static const paco = Color(0xff310B0B);
 
   static Color get primary => vinRouge;
+  static Color get secondary => paco;
   static Color get background => karry;
 
   //Neutral colors
