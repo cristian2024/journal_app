@@ -8,7 +8,6 @@ import 'package:journal/core/presentation/theme/get_colors.dart';
 import 'package:journal/core/presentation/theme/get_text_styles.dart';
 import 'package:journal/core/presentation/translator/translator_routes.dart';
 import 'package:journal/core/presentation/ui/images/svgs.dart';
-import 'package:journal/main.dart';
 
 class OnBoardingScreen extends StatelessWidget {
   const OnBoardingScreen({super.key});

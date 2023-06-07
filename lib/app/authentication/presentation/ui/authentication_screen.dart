@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:journal/core/presentation/ui/widgets/journal_button.dart';
 
 class AuthScreen extends StatelessWidget {
   const AuthScreen({super.key});
@@ -7,6 +8,25 @@ class AuthScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: Container());
+    return Scaffold(
+      body: SafeArea(
+        child: Column(
+          children: [
+            JournalButton(
+              width: double.infinity,
+              heroTag: 'first',
+              onPressed: () {},
+              type: JournalButtonType.outlined,
+            ),
+            JournalButton(
+              width: double.infinity,
+              heroTag: 'first',
+              onPressed: () {},
+              type: JournalButtonType.outlined,
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }

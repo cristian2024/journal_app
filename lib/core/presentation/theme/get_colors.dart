@@ -7,6 +7,11 @@ ThemeData _getTheme(BuildContext context) {
 Color getPrimary(BuildContext context) {
   return _getTheme(context).colorScheme.primary;
 }
+
 Color getSecondary(BuildContext context) {
   return _getTheme(context).colorScheme.secondary;
+}
+
+Color getSFBackground(BuildContext context) {
+  return _getTheme(context).scaffoldBackgroundColor;
 }

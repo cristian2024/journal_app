@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:journal/app/on.boarding/presentation/screens/on_boarding_screen.dart';
 import 'package:journal/app/on.boarding/services/on_boarding_storage.dart';
 import 'package:journal/core/presentation/routes/main_routes.dart';
@@ -7,7 +8,8 @@ import 'package:journal/core/presentation/theme/theme.dart';
 import 'package:journal/core/presentation/ui/widgets/journal_text.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
+  final widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+  FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
   await EasyLocalization.ensureInitialized();
   runApp(
     EasyLocalization(
@@ -62,18 +64,9 @@ class _HomePageState extends State<HomePage> {
 
   _init() async {
     final onBoarding = !(await OnBoardingStorage().get());
+    FlutterNativeSplash.remove();
     if (onBoarding) {
-      final snackBar = SnackBar(
-        content: const Text('Yay! A SnackBar!'),
-        action: SnackBarAction(
-          label: 'Undo',
-          onPressed: () {
-            // Some code to undo the change.
-          },
-        ),
-      );
       WidgetsBinding.instance.addPostFrameCallback((_) {
-        ScaffoldMessenger.of(context).showSnackBar(snackBar);
         Navigator.of(context).pushNamed(OnBoardingScreen.route);
       });
     }
@@ -82,9 +75,6 @@ class _HomePageState extends State<HomePage> {
   void _incrementCounter() {
     OnBoardingStorage().set(false);
     Navigator.of(context).pushNamed(OnBoardingScreen.route);
-    // setState(() {
-    //   _counter++;
-    // });
   }
 
   @override
