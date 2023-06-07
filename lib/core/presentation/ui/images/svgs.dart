@@ -2,7 +2,8 @@ import 'package:journal/core/utils/images_utils.dart';
 
 enum JournalSVGS {
   bookShelves(route: 'bookshelves.svg'),
-  readingBook(route: 'reading_book.svg');
+  readingBook(route: 'reading_book.svg'),
+  readingSeat(route: 'reading_seat.svg');
 
   final String route;
   final bool inAsset;

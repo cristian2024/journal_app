@@ -1,7 +1,7 @@
 part of 'theme.dart';
 
 final baseFont = GoogleFonts.inter().copyWith(
-  color: JournalColors.charcoalGrey,
+  color: JournalColors.paco,
 );
 
 TextTheme textTheme(ThemeData basis) {
@@ -24,15 +24,19 @@ TextTheme textTheme(ThemeData basis) {
     ),
     bodyLarge: baseFont.copyWith(
       fontWeight: FontWeight.normal,
-      fontSize: 16,
+      fontSize: 17,
     ),
     bodyMedium: baseFont.copyWith(
       fontWeight: FontWeight.normal,
-      fontSize: 14,
+      fontSize: 15,
+    ),
+    bodySmall: baseFont.copyWith(
+      fontWeight: FontWeight.normal,
+      fontSize: 13,
     ),
     //as title
     headlineMedium: baseFont.copyWith(
-      fontSize: 22,
+      fontSize: 18,
       fontWeight: FontWeight.bold,
     ),
     headlineSmall: baseFont.copyWith(

@@ -1,10 +1,13 @@
-
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_onboarding_slider/flutter_onboarding_slider.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:journal/app/authentication/presentation/ui/authentication_screen.dart';
 import 'package:journal/app/on.boarding/services/on_boarding_storage.dart';
+import 'package:journal/core/presentation/theme/get_colors.dart';
+import 'package:journal/core/presentation/theme/get_text_styles.dart';
+import 'package:journal/core/presentation/translator/translator_routes.dart';
 import 'package:journal/core/presentation/ui/images/svgs.dart';
-import 'package:journal/main.dart';
 
 class OnBoardingScreen extends StatelessWidget {
   const OnBoardingScreen({super.key});
@@ -15,9 +18,10 @@ class OnBoardingScreen extends StatelessWidget {
     final size = MediaQuery.of(context).size;
     return Scaffold(
       body: OnBoardingSlider(
-        finishButtonText: 'Hola',
-        // hasSkip: false,
-        // skipIcon: Icon(Icons.abc_outlined),
+        finishButtonText: tr(TR.obFinishButton),
+        finishButtonTextStyle: getHeadlineMedium(context).copyWith(
+          color: getSecondary(context),
+        ),
         skipTextButton: const Text(
           'Skip',
           style: TextStyle(
@@ -31,26 +35,37 @@ class OnBoardingScreen extends StatelessWidget {
           await OnBoardingStorage().set(true);
           // ignore: use_build_context_synchronously
           await Navigator.of(context).pushNamedAndRemoveUntil(
-            HomePage.route,
+            AuthScreen.route,
             (route) => false,
           );
         },
         totalPage: 3,
         headerBackgroundColor: Colors.transparent,
-        pageBodies: const [
-          OnBoardingBody(
-            title: 'On your way...',
-            description: 'to find the perfect looking Onboarding for your app?',
+        pageBodies: List.generate(
+          3,
+          (index) => OnBoardingBody(
+            title: tr(
+              TR.slideTitle(index + 1),
+            ),
+            description: tr(
+              TR.slideText(index + 1),
+            ),
           ),
-          OnBoardingBody(
-            title: 'Second one',
-            description: 'muajajjajajajaj',
-          ),
-          OnBoardingBody(
-            title: 'Third one',
-            description: 'muajajjajajajaj',
-          ),
-        ],
+        ),
+        // pageBodies: const [
+        // OnBoardingBody(
+        //   title: ,
+        //   description: 'to find the perfect looking Onboarding for your app?',
+        // ),
+        // OnBoardingBody(
+        //   title: 'Second one',
+        //   description: 'muajajjajajajaj',
+        // ),
+        // OnBoardingBody(
+        //   title: 'Third one',
+        //   description: 'muajajjajajajaj',
+        // ),
+        // ],
         speed: 5,
         background: [
           SvgPicture.asset(
