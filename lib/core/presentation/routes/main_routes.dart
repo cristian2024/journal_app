@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:journal/app/authentication/presentation/ui/authentication_screen.dart';
+import 'package:journal/app/authentication/presentation/ui/signin_screen.dart';
+import 'package:journal/app/authentication/presentation/ui/signup_screen.dart';
 import 'package:journal/app/on.boarding/presentation/screens/on_boarding_screen.dart';
 import 'package:journal/main.dart';
 
@@ -8,4 +10,6 @@ final mainRoutes = {
   HomePage.route: (BuildContext context) => const HomePage(),
   OnBoardingScreen.route: (BuildContext context) => const OnBoardingScreen(),
   AuthScreen.route: (BuildContext context) => const AuthScreen(),
+  SignupScreen.route: (BuildContext context)=> const SignupScreen(),
+  SigninScreen.route: (BuildContext context) => const SigninScreen(),
 };

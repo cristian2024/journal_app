@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:journal/core/presentation/theme/get_colors.dart';
+import 'package:journal/core/presentation/theme/get_text_styles.dart';
+import 'package:journal/core/presentation/ui/widgets/journal_text.dart';
 
 class JournalButton extends StatelessWidget {
   const JournalButton({
@@ -10,8 +12,13 @@ class JournalButton extends StatelessWidget {
     this.heroTag,
     this.height,
     this.width,
+    this.child,
+    this.routeText,
     this.type = JournalButtonType.primary,
-  });
+  }) : assert(
+          child == null || routeText == null,
+          'You only can use child or text, but not both',
+        );
 
   final VoidCallback? onPressed;
   final JournalButtonType type;
@@ -20,17 +27,32 @@ class JournalButton extends StatelessWidget {
   final double? width;
   final double? height;
 
+  final Widget? child;
+  final String? routeText;
+
   @override
   Widget build(BuildContext context) {
     final buttonStyle = type.getStyle(context);
+
+    Widget texto = Container();
+    if (routeText != null) {
+      texto = JText(
+        routeText ?? '',
+        style: getHeadlineMedium(context).copyWith(
+          color: getPrimary(context),
+        ),
+      );
+    }
     return SizedBox(
       width: width,
       height: height,
       child: FloatingActionButton(
+        elevation: buttonStyle.elevation,
         heroTag: heroTag,
         onPressed: onPressed,
         backgroundColor: buttonStyle.backgroundColor,
         shape: buttonStyle.shape,
+        child: child ?? texto,
       ),
     );
   }
@@ -39,10 +61,17 @@ class JournalButton extends StatelessWidget {
 enum JournalButtonType {
   primary,
   outlined,
+  text,
 }
 
 Map<JournalButtonType, _JournalButtonStyle Function(BuildContext context)>
     _styles = {
+  JournalButtonType.text: (context) => _JournalButtonStyle(
+        backgroundColor: getSFBackground(context),
+        splashColor: Colors.transparent,
+        elevation: 0,
+        shape: const Border(),
+      ),
   JournalButtonType.primary: (context) => const _JournalButtonStyle(),
   JournalButtonType.outlined: (context) => _JournalButtonStyle(
         backgroundColor: getSFBackground(context),

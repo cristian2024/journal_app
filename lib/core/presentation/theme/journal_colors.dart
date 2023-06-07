@@ -10,6 +10,7 @@ abstract class JournalColors {
   static Color get primary => vinRouge;
   static Color get secondary => paco;
   static Color get background => karry;
+  static Color get textColor => paco;
 
   //Neutral colors
   //black

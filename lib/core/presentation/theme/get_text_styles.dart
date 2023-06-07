@@ -12,3 +12,17 @@ TextStyle getHeadlineMedium(BuildContext context) {
 TextStyle getHeadlineSmall(BuildContext context) {
   return _getTheme(context).headlineSmall ?? baseFont;
 }
+
+TextStyle getLabelLarge(BuildContext context) {
+  return _getTheme(context).labelLarge ?? baseFont;
+}
+
+
+
+TextStyle getBodyMedium(BuildContext context) {
+  return _getTheme(context).bodyMedium ?? baseFont;
+}
+
+TextStyle getBodyLarge(BuildContext context) {
+  return _getTheme(context).bodyLarge ?? baseFont;
+}

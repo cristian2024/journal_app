@@ -2,8 +2,13 @@ abstract class TR {
   //========================================
   // Authentication
   //========================================
-  
-  
+  static String get _authentication => 'authentication';
+  static String get loginButton => '$_authentication.login_button';
+  static String get registerText => '$_authentication.register_button';
+
+  static String get notAccount => '$_authentication.not_account';
+  static String get enterNoAccount => '$_authentication.enter_without_account';
+
   // On Boarding
   //========================================
   static String get _onBoarding => 'onboarding';
@@ -24,6 +29,7 @@ abstract class TR {
   static String slideTitle(int option) {
     return '${_slides[option] ?? _firstSlide}.title';
   }
+
   static String slideText(int option) {
     return '${_slides[option] ?? _firstSlide}.text';
   }
