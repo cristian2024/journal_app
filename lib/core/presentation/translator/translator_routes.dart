@@ -1,4 +1,6 @@
 abstract class TR {
+  static String get or => 'or';
+
   //========================================
   // Authentication
   //========================================
@@ -8,6 +10,9 @@ abstract class TR {
 
   static String get notAccount => '$_authentication.not_account';
   static String get enterNoAccount => '$_authentication.enter_without_account';
+
+  static String get email => '$_authentication.email';
+  static String get password => '$_authentication.password';
 
   // On Boarding
   //========================================

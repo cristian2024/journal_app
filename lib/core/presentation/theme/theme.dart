@@ -27,9 +27,9 @@ ThemeData theme = _baseTheme.copyWith(
     alignment: Alignment.center,
     elevation: 2,
   ),
-  // dividerTheme: _baseTheme.dividerTheme.copyWith(
-  //   color: CrisinaColors.mountainMist,
-  // ),
+  dividerTheme: _baseTheme.dividerTheme.copyWith(
+    color: JournalColors.primary,
+  ),
   // canvasColor: Colors.transparent,
   // chipTheme: _baseTheme.chipTheme.copyWith(
   //   backgroundColor: CrisinaColors.romance.withOpacity(.05),
@@ -55,32 +55,32 @@ ThemeData theme = _baseTheme.copyWith(
   //   // backgroundColor: ,
   //   selectedItemColor: CrisinaColors.lavenderIndigo,
   // ),
-  // inputDecorationTheme: _baseTheme.inputDecorationTheme.copyWith(
-  //   labelStyle: baseFont.copyWith(
-  //     fontSize: 16,
-  //     color: CrisinaColors.gainsboro,
-  //   ),
-  //   errorBorder: const UnderlineInputBorder(
-  //     borderSide: BorderSide(
-  //       color: CrisinaColors.strawBerry,
-  //       width: 1,
-  //     ),
-  //   ),
-  //   errorStyle: baseFont.copyWith(
-  //     fontSize: 12,
-  //     color: CrisinaColors.strawBerry,
-  //   ),
-  //   enabledBorder: const UnderlineInputBorder(
-  //     borderSide: BorderSide(
-  //       color: CrisinaColors.gainsboro,
-  //     ),
-  //   ),
-  //   focusedBorder: const UnderlineInputBorder(
-  //     borderSide: BorderSide(
-  //       color: CrisinaColors.lavenderIndigo,
-  //     ),
-  //   ),
-  // ),
+  inputDecorationTheme: _baseTheme.inputDecorationTheme.copyWith(
+    labelStyle: baseFont.copyWith(
+      fontSize: 16,
+      color: JournalColors.vinRouge,
+    ),
+    errorBorder: const UnderlineInputBorder(
+      borderSide: BorderSide(
+        color: JournalColors.strawBerry,
+        width: 1,
+      ),
+    ),
+    errorStyle: baseFont.copyWith(
+      fontSize: 12,
+      color: JournalColors.strawBerry,
+    ),
+    enabledBorder: const UnderlineInputBorder(
+      borderSide: BorderSide(
+        color: JournalColors.paco,
+      ),
+    ),
+    focusedBorder: const UnderlineInputBorder(
+      borderSide: BorderSide(
+        color: JournalColors.redDamask,
+      ),
+    ),
+  ),
   // snackBarTheme: _baseTheme.snackBarTheme.copyWith(
   //   backgroundColor: CrisinaColors.purpleHeart,
   // ),
